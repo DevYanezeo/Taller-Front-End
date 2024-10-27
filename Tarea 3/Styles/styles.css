@@ -1,0 +1,100 @@
+body {
+  background-color: #222;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+}
+
+.header {
+  display: grid;
+  grid-template-areas: "logo title nav";
+  grid-template-columns: 1fr 2fr 2fr;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+}
+.header .logo {
+  width: 200px;
+  height: auto;
+  grid-area: logo;
+}
+.header .titulo {
+  text-align: center;
+  font-size: 36px;
+  color: #ffffff;
+  margin: 0;
+  grid-area: title;
+}
+.header .navigation {
+  grid-area: nav;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+.header .navigation a {
+  color: #b89c38;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+  font-size: 17px;
+}
+.header .navigation a.button {
+  background-color: #f5c518;
+  color: black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: 2px solid #b89c38;
+}
+.header .navigation a:hover {
+  color: #ffffff;
+}
+
+.main-content {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+.main-content section {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+.main-content section h1, .main-content section h2 {
+  color: #ffffff;
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+.footer section {
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .header {
+    grid-template-areas: "logo" "title" "nav";
+    grid-template-columns: 1fr;
+  }
+  .navigation {
+    grid-auto-flow: row;
+    justify-content: center;
+  }
+  .navigation a {
+    margin: 5px 0;
+  }
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+  .footer {
+    padding: 10px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

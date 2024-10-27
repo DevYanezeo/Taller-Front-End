@@ -1,0 +1,128 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #f5c518;
+$text-color: #ffffff;
+$background-color: #222;
+$header-bg-color: rgba(0, 0, 0, 0.7);
+$footer-bg-color: rgba(0, 0, 0, 0.7);
+
+// Estilos Generales del Body
+body {
+    background-color: $background-color;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: $text-color;
+}
+
+// Estilos del Encabezado
+.header {
+    display: grid;
+    grid-template-areas: 
+        "logo title nav";
+    grid-template-columns: 1fr 2fr 2fr;
+    align-items: center;
+    background: $header-bg-color;
+    padding: 20px;
+
+    .logo {
+        width: 200px;
+        height: auto;
+        grid-area: logo;
+    }
+
+    .titulo {
+        text-align: center;
+        font-size: 36px;
+        color: $text-color;
+        margin: 0;
+        grid-area: title;
+    }
+
+    .navigation {
+        grid-area: nav;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: flex-end;
+        margin-left: auto;
+
+        a {
+            color: #b89c38;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease;
+            font-size: 17px;
+
+            &.button {
+                background-color: $secondary-color;
+                color: black;
+                border-radius: 5px;
+                padding: 10px 20px;
+                border: 2px solid #b89c38;
+            }
+
+            &:hover {
+                color: $text-color;
+            }
+        }
+    }
+}
+
+// Estilos del Contenido Principal
+.main-content {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+
+    section {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+
+        h1, h2 {
+            color: $text-color;
+        }
+    }
+}
+
+// Estilos del Pie de Página
+.footer {
+    background: $footer-bg-color;
+    color: $text-color;
+    padding: 20px;
+    text-align: center;
+
+    section {
+        margin: 10px 0;
+    }
+}
+
+// Responsividad
+@media (max-width: 768px) {
+    .header {
+        grid-template-areas: 
+            "logo"
+            "title"
+            "nav";
+        grid-template-columns: 1fr;
+    }
+
+    .navigation {
+        grid-auto-flow: row;
+        justify-content: center;
+
+        a {
+            margin: 5px 0;
+        }
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer {
+        padding: 10px;
+    }
+}
